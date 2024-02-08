@@ -1,7 +1,7 @@
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('nope')
 def hello_world():
 
    return 'WASD’
