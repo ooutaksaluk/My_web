@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 5</title>
+</head>
+<body>
+    <h1>กรุณาเลือกขนาดของมาตรวัด</h1>
+    <form action="{{ url_for('page5') }}" method="POST">
+        <label for="size">ขนาด:</label>
+        <select name="size" id="size">
+            <option value="1/2">1/2 นิ้ว</option>
+            <option value="3/4">3/4 นิ้ว</option>
+            <option value="1">1 นิ้ว</option>
+            <option value="1.5">1 * 1/2 นิ้ว</option>
+            <option value="2">2 นิ้ว</option>
+            <option value="3">3 นิ้ว</option>
+            <option value="4">4 นิ้ว</option>
+            <option value="6">6 นิ้ว</option>
+            <option value="8">8 นิ้ว</option>
+            <option value="12">12 นิ้ว</option>
+            <option value="16">16 นิ้ว</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
