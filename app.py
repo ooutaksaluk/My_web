@@ -109,6 +109,9 @@ def calculate_rate_other(water_usage):
 
 @app.route('/page9', methods=['GET', 'POST'])
 def page9():
+    if request.method == 'POST':
+        return redirect(url_for('thank_you'))
+    return render_template('page9.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
