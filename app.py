@@ -37,5 +37,8 @@ def page5():
         return redirect(url_for('get_month'))
     return render_template('page5.html')
 
+@app.route('/page6', methods=['GET', 'POST'])
+def page6():
+
 if __name__ == '__main__':
     app.run(debug=True)
