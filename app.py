@@ -30,5 +30,8 @@ def page4():
             return redirect(url_for('page8', area='Other'))
     return render_template('page4.html')
 
+@app.route('/page5', methods=['GET', 'POST'])
+def page5():
+
 if __name__ == '__main__':
     app.run(debug=True)
