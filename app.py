@@ -52,34 +52,8 @@ def page7():
         return redirect(url_for('calculate_water_cost', water_usage=water_usage))
     return render_template('page7.html')
 
-@app.route('/calculate_water_cost/<water_usage>')
-def calculate_water_cost(water_usage):
-    water_usage = float(water_usage)
-    if water_usage <= 30:
-        rate_per_unit = 8.50
-    elif water_usage <= 40:
-        rate_per_unit = 10.03
-    elif water_usage <= 50:
-        rate_per_unit = 10.35
-    elif water_usage <= 60:
-        rate_per_unit = 10.68
-    elif water_usage <= 70:
-        rate_per_unit = 11.00
-    elif water_usage <= 80:
-        rate_per_unit = 11.33
-    elif water_usage <= 90:
-        rate_per_unit = 12.50
-    else:
-        rate_per_unit = 12.50  
-
-    service_charge = 50  
-    tax_rate = 0.07  
-
-    water_cost = (water_usage * rate_per_unit) + service_charge
-    total_cost = water_cost * (1 + tax_rate)
-
-    return render_template('page8.html', water_cost=water_cost, total_cost=total_cost)
-
+@app.route('/calculate_water_cost/<area>', methods=['GET', 'POST'])
+def calculate_water_cost(area):
 
 if __name__ == '__main__':
     app.run(debug=True)
