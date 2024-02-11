@@ -39,6 +39,11 @@ def page5():
 
 @app.route('/page6', methods=['GET', 'POST'])
 def page6():
+    if request.method == 'POST':
+        year = request.form['year']
+        month = request.form['month']
+        return redirect(url_for('thank_you'))
+    return render_template('page6.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
