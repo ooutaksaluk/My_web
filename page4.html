@@ -6,8 +6,14 @@
     <title>Page 4</title>
 </head>
 <body>
-    <h1>คุณอยู่ในพื้นที่กรุงเทพมหานครหรือไม่?</h1>
-    <a href="{{ url_for('home') }}">ไม่ใช่</a>
-    <a href="{{ url_for('page5') }}">ใช่</a>
+    <h1>อยู่ในพื้นที่กรุงเทพมหานครหรือไม่</h1>
+    <form action="/page5" method="post">
+        <label for="location">อยู่ในพื้นที่กรุงเทพมหานครหรือไม่:</label><br>
+        <input type="radio" id="yes" name="location" value="yes">
+        <label for="yes">ใช่</label><br>
+        <input type="radio" id="no" name="location" value="no">
+        <label for="no">ไม่ใช่</label><br><br>
+        <input type="submit" value="ยืนยัน">
+    </form>
 </body>
 </html>
