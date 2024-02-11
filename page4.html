@@ -6,13 +6,12 @@
     <title>Page 4</title>
 </head>
 <body>
-    <h1>อยู่ในพื้นที่กรุงเทพมหานครหรือไม่</h1>
-    <form action="/page5" method="post">
-        <label for="location">อยู่ในพื้นที่กรุงเทพมหานครหรือไม่:</label><br>
-        <input type="radio" id="yes" name="location" value="yes">
-        <label for="yes">ใช่</label><br>
-        <input type="radio" id="no" name="location" value="no">
-        <label for="no">ไม่ใช่</label><br><br>
+    <h1>อยู่ภายในพื้นที่กรุงเทพมหานครหรือไม่?</h1>
+    <form action="/page8" method="post">
+        <label for="location_yes">ใช่:</label>
+        <input type="radio" id="location_yes" name="location" value="bangkok" required><br>
+        <label for="location_no">ไม่ใช่:</label>
+        <input type="radio" id="location_no" name="location" value="other" required><br><br>
         <input type="submit" value="ยืนยัน">
     </form>
 </body>
