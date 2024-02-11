@@ -13,6 +13,9 @@ def page2():
         return redirect(url_for('page3'))
     return render_template('page2.html')
 
+@app.route('/page3', methods=['GET', 'POST'])
+def page3():
+
 
 if __name__ == '__main__':
     app.run(debug=True)
