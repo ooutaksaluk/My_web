@@ -15,6 +15,12 @@ def page2():
 
 @app.route('/page3', methods=['GET', 'POST'])
 def page3():
+    if request.method == 'POST':
+        surname = request.form['surname']
+        return redirect(url_for('ask_bangkok'))
+    return render_template('page3.html')
+
+
 
 
 if __name__ == '__main__':
