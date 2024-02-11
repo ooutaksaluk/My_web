@@ -54,6 +54,22 @@ def page7():
 
 @app.route('/calculate_water_cost/<area>', methods=['GET', 'POST'])
 def calculate_water_cost(area):
+    if request.method == 'POST':
+        water_usage = float(request.form['water_usage'])
+        if area == 'Bangkok':
+            rate_per_unit = calculate_rate_bangkok(water_usage)
+        else:
+            rate_per_unit = calculate_rate_other(water_usage)
+
+        service_charge = 50  
+        tax_rate = 0.07  
+
+        water_cost = (water_usage * rate_per_unit) + service_charge
+        total_cost = water_cost * (1 + tax_rate)
+
+        return render_template('page8.html', water_cost=water_cost, total_cost=total_cost)
+
+    return render_template('calculate_water_cost.html', area=area)
 
 if __name__ == '__main__':
     app.run(debug=True)
