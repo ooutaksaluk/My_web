@@ -22,6 +22,13 @@ def page3():
 
 @app.route('/page4', methods=['GET', 'POST'])
 def page4():
+    if request.method == 'POST':
+        location = request.form['location']
+        if location == 'bangkok':
+            return redirect(url_for('page8', area='Bangkok'))
+        else:
+            return redirect(url_for('page8', area='Other'))
+    return render_template('page4.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
