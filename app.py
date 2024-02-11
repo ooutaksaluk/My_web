@@ -89,5 +89,23 @@ def calculate_rate_bangkok(water_usage):
     else:
         return 12.50  
     
+def calculate_rate_other(water_usage):
+    if water_usage <= 30:
+        return 8.50
+    elif water_usage <= 40:
+        return 10.03
+    elif water_usage <= 50:
+        return 10.35
+    elif water_usage <= 60:
+        return 10.68
+    elif water_usage <= 70:
+        return 11.00
+    elif water_usage <= 80:
+        return 11.33
+    elif water_usage <= 90:
+        return 12.50
+    else:
+        return 12.50
+    
 if __name__ == '__main__':
     app.run(debug=True)
