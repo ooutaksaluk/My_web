@@ -8,29 +8,38 @@
 </head>
 <body>
     <canvas id="myChart"></canvas>
+
     <script>
-        // สร้างกราฟ
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'],
-                datasets: [{
-                    label: 'การใช้น้ำ (ลบ.ม.)',
-                    data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120], // ใส่ข้อมูลจากหน้าที่หก
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+        document.addEventListener('DOMContentLoaded', function () {
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            var waterUsage = [];  // ปริมาณการใช้น้ำที่รับมาจากหน้าที่เจ็ด
+
+            // เตรียมข้อมูลสำหรับกราฟ
+            // เช่น waterUsage.push(ค่า); เพื่อเพิ่มค่าลงในรายการปริมาณการใช้น้ำ
+
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'],
+                    datasets: [{
+                        label: 'ปริมาณการใช้น้ำ',
+                        data: waterUsage,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
+            });
         });
     </script>
 </body>
 </html>
+
