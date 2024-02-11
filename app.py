@@ -25,9 +25,9 @@ def page4():
     if request.method == 'POST':
         location = request.form['location']
         if location == 'bangkok':
-            return redirect(url_for('page8', area='Bangkok'))
+            return redirect(url_for('calculate_water_cost', area='Bangkok'))
         else:
-            return redirect(url_for('page8', area='Other'))
+            return redirect(url_for('calculate_water_cost', area='Other'))
     return render_template('page4.html')
 
 @app.route('/page5', methods=['GET', 'POST'])
@@ -51,6 +51,10 @@ def page7():
         water_usage = float(request.form['water_usage'])
         return redirect(url_for('calculate_water_cost', water_usage=water_usage))
     return render_template('page7.html')
+
+@app.route('/calculate_water_cost/<water_usage>')
+def calculate_water_cost(water_usage):
+    water_usage = float(water_usage)
 
 if __name__ == '__main__':
     app.run(debug=True)
