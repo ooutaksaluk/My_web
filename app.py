@@ -47,6 +47,10 @@ def page6():
 
 @app.route('/page7', methods=['GET', 'POST'])
 def page7():
+    if request.method == 'POST':
+        water_usage = float(request.form['water_usage'])
+        return redirect(url_for('calculate_water_cost', water_usage=water_usage))
+    return render_template('page7.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
