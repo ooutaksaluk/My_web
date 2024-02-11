@@ -32,6 +32,10 @@ def page4():
 
 @app.route('/page5', methods=['GET', 'POST'])
 def page5():
+    if request.method == 'POST':
+        size = request.form['size']
+        return redirect(url_for('get_month'))
+    return render_template('page5.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
