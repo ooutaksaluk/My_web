@@ -8,6 +8,11 @@ def home():
 
 app.route('/page2', methods=['GET', 'POST'])
 def page2():
+    if request.method == 'POST':
+        name = request.form['name']
+        return redirect(url_for('page3'))
+    return render_template('page2.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
