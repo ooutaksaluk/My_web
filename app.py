@@ -20,8 +20,8 @@ def page3():
         return redirect(url_for('ask_bangkok'))
     return render_template('page3.html')
 
-
-
+@app.route('/page4', methods=['GET', 'POST'])
+def page4():
 
 if __name__ == '__main__':
     app.run(debug=True)
