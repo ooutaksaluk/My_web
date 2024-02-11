@@ -113,5 +113,8 @@ def page9():
         return redirect(url_for('thank_you'))
     return render_template('page9.html')
 
+@app.route('/thank_you')
+def thank_you():
+
 if __name__ == '__main__':
     app.run(debug=True)
